@@ -20,7 +20,7 @@ print(password)
 subprocess.run(["sudo", "apt-get", "install", "-y", "tor"])
 os.makedirs("/var/lib/tor/hidden_service_8220", exist_ok=True)
 os.makedirs("/var/lib/tor/hidden_service_5173", exist_ok=True)
-with open("/etc/tor/torrc", "a") as f:
+with open("/etc/tor/torrc", "a", newline="") as f:
     f.write("\nHiddenServiceDir /var/lib/tor/hidden_service_8220/\nHiddenServicePort 80 127.0.0.1:8220\n")
     f.write("HiddenServiceDir /var/lib/tor/hidden_service_5173/\nHiddenServicePort 80 127.0.0.1:5173\n")
 
